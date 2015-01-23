@@ -2,7 +2,7 @@
     <h1>Handling arguments and creating navigational tabs</h1>
     <p class="description">In the manifest.json file, you can update the <code>DefaultTabs</code> property with arguments that correspond to nagivational tab names. In the <code>Application</code> class, when tabs are clicked, the arguments property is updated. In this example, we are simply showing and hiding a &lt;div /&gt; element each time the arguments are updated.</p>
 
-    <h3>The manifest.json snippet</h3>
+    <h3>The manifest.json snippet (Does not apply to Bungalow)</h3>
     <div class="code-block">
         <pre><code data-language="javascript">{
     ...
@@ -40,24 +40,21 @@
         </div>
     </div>
     <script type="script/snippet" data-container="js" data-execute="no">
-require(['$api/models'], function(models) {
+//require(['$api/models'], function(models) {
 
     // When application has loaded, run tabs function
-    models.application.load('arguments').done(tabs);
-
-    // When arguments change, run tabs function
-    models.application.addEventListener('arguments', tabs);
-
-    function tabs() {
-        var args = models.application.arguments;
-        var current = document.getElementById(args[0]);
-        var sections = document.getElementsByClassName('section');
-        for (var i = 0, l = sections.length; i &lt; l; i++){
-            sections[i].style.display = 'none';
+    window.addEventListener('message', function (event) {
+        if (event.data.action === 'navigate') {
+            var args = event.data.arguments;
+            var current = document.getElementById(args[0]);
+            var sections = document.getElementsByClassName('section');
+            for (var i = 0, l = sections.length; i &lt; l; i++){
+                sections[i].style.display = 'none';
+            }
+            current.style.display = 'block';
         }
-        current.style.display = 'block';
     }
-});
+//});
     </script>
 
     <p class="description">For a small app, showing and hiding certain elements on a page can be enough. However, a different approach would be to split the content in several HTML pages.</p>

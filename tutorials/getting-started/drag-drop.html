@@ -30,8 +30,7 @@
         <div id="drop-box">Drop a playlist here</div>
     </div>
     <script type="script/snippet" data-container="js">
-        require(['$api/models'], function(models) {
-
+       
             // Handle drops
             var dropBox = document.querySelector('#drop-box');
 
@@ -59,12 +58,13 @@
 
             dropBox.addEventListener('drop', function(e){
                 e.preventDefault();
-                var drop = models.Playlist.fromURI(e.dataTransfer.getData('text'));
-                this.classList.remove('over');
-                var successMessage = document.createElement('p');
-                successMessage.innerHTML = 'Playlist successfully dropped: ' + drop.uri;
-                this.appendChild(successMessage);
+                var self = this;
+                Playlist.fromURI(e.dataTransfer.getData('text'), function (drop) {
+                    self.classList.remove('over');
+                    var successMessage = document.createElement('p');
+                    successMessage.innerHTML = 'Playlist successfully dropped: ' + drop.uri;
+                    self.appendChild(successMessage);
+                });
             }, false);
-        });
     </script>
 </div>

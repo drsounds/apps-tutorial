@@ -1,5 +1,6 @@
 <div class="section">
     <h1>Starring and unstarring tracks</h1>
+    <i>This feature is not yet implemented in Bungalow</i>
     <p class="description">You can star or unstar a track through the <code>star</code> and <code>unstar</code> functions from the Library model.</p>
     <div class="reference">
         Reference: <a href="https://developer.spotify.com/docs/apps/api/1.0/api-models-track.html">Track Model</a> and <a href="https://developer.spotify.com/docs/apps/api/1.0/api-library-library.html">Library Model</a>.
@@ -16,7 +17,7 @@
         <button id="star" class="sp-button"></button>
     </div>
     <script type="script/snippet" data-container="js">
-        require(['$api/library#Library'], function(Library) {
+       /* require(['$api/library#Library'], function(Library) {
 
             var currentLibrary = Library.forCurrentUser();
 
@@ -50,6 +51,6 @@
             track.load('starred').done(function(t) {
                 updateStarButton(t.starred);
             });
-        });
+        });*/
     </script>
 </div>

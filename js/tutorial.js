@@ -1,6 +1,6 @@
-require([
-    '$api/models',
-    ], function(models) {
+//require([
+ //   '$api/models',
+ //   ], function(models) {
 
     function htmlEscape(str) {
         return String(str)
@@ -11,15 +11,8 @@ require([
                 .replace(/>/g, '&gt;');
     }
 
-    function tabs() {
-        var args = models.application.arguments;
-        if (args) {
-            var lastArg = args[args.length - 1];
-            if (lastArg !== 'index' && lastArg !== 'tabs') {
-                return;
-           }
-       }
-
+    function tabs(tab) {
+        
         // compose file
         var file = args.length == 1 ? (args[0] + '.html') : '/tutorials/' + args.slice(0, args.length-1).join('/') + '.html';
         var xhr = new XMLHttpRequest();
@@ -68,8 +61,19 @@ require([
     }
 
     // When application has loaded, run pages function
-    models.application.load('arguments').done(tabs);
+    //models.application.load('arguments').done(tabs);
 
     // When arguments change, run pages function
-    models.application.addEventListener('arguments', tabs);
-}); // require
+    window.onmessage = function (event) {
+         if (event.data.action === 'navigate') {
+            var args = event.data.arguments;
+            if (args) {
+                var lastArg = args[args.length - 1];
+                if (lastArg !== 'index' && lastArg !== 'tabs') {
+                    return;
+               }
+            }
+            tabs(args);
+        }
+    }   
+//}); // require

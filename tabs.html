@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="$views/css/image.css">
-    <link rel="stylesheet" href="$views/css/list.css">
-    <link rel="stylesheet" href="$views/css/buttons.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/github.css">
+    <!-- we also need a base tag. For local apps we use app://bungalow/apps/&lt;base-app&gt;/ 
+    for remote apps (those live on App Finder clone) we write the base url to the app host -->
+    <base href="app://bungalow/apps/tutorial/">
+    <!--
+    These links are removed
+    <link rel="stylesheet" data-uri="$views/css/image.css">
+    <link rel="stylesheet" data-uri="$views/css/list.css">
+    <link rel="stylesheet" data-uri="$views/css/buttons.css">
+    and replaced with -->
+    <link rel="stylesheet" data-uri="http://127.0.0.1:9261/themes/style.css">
+    <link rel="stylesheet" data-uri="css/main.css">
+    <link rel="stylesheet" data-uri="css/github.css">
+    <!-- Bungalow platform requires these additional JS files -->
+    <script src="http://127.0.0.1:9261/apps/api/views.js" type="text/JavaScript"></script>
+    <script src="http://127.0.0.1:9261/apps/api/models.js" type="text/JavaScript"></script>
 </head>
 <body>
     <div id="wrapper">
         <div class="section">
             <h1>Secondary tab</h1>
             <p class="description">This is the content for the second tab. If you want to see how the tab change has been handled, read
-            <a href="spotify:app:api-tutorial:getting-started:arguments">Handling arguments and creating navigational tabs</a>.
+            <a href="spotify:tutorial:getting-started:arguments">Handling arguments and creating navigational tabs</a>.
             </p>
         </div>
     </div>

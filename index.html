@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="$views/css/image.css">
-        <link rel="stylesheet" href="$views/css/list.css">
-        <link rel="stylesheet" href="$views/css/buttons.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/github.css">
+        <!-- we also need a base tag. For local apps we use app://bungalow/apps/&lt;base-app&gt;/ 
+        for remote apps (those live on App Finder clone) we write the base url to the app host -->
+        <base href="app://bungalow/apps/tutorial/">
+        <!--
+        These links are removed
+        <link rel="stylesheet" data-uri="$views/css/image.css">
+        <link rel="stylesheet" data-uri="$views/css/list.css">
+        <link rel="stylesheet" data-uri="$views/css/buttons.css">
+        and replaced with -->
+        <link rel="stylesheet" data-uri="http://127.0.0.1:9261/themes/style.css">
+        <link rel="stylesheet" data-uri="css/main.css">
+        <link rel="stylesheet" data-uri="css/github.css">
+        <!-- Bungalow platform requires these additional JS files -->
+        <script src="http://127.0.0.1:9261/apps/api/views.js" type="text/JavaScript"></script>
+        <script src="http://127.0.0.1:9261/apps/api/models.js" type="text/JavaScript"></script>
     </head>
     <body>
         <div id="wrapper">
             <div id="index" class="section">
-                <h1>Spotify Apps API Tutorials</h1>
+                <h1>Bungalow API Tutorials</h1>
                 <h2>Getting started</h2>
                 <ul>
-                    <li><a href="spotify:app:api-tutorial:getting-started:manifest">Creating your manifest file</a></li>
-                    <li><a href="spotify:app:api-tutorial:getting-started:arguments">Handling arguments, creating pages and navigational tabs</a></li>
-                    <li><a href="spotify:app:api-tutorial:getting-started:drag-drop">Dragging and dropping content into an app</a></li>
+                    <li><a data-uri="spotify:tutorial:getting-started:manifest">Creating your manifest file</a></li>
+                    <li><a data-uri="spotify:tutorial:getting-started:arguments">Handling arguments, creating pages and navigational tabs</a></li>
+                    <li><a data-uri="spotify:tutorial:getting-started:drag-drop">Dragging and dropping content into an app</a></li>
                 </ul>
 
-                <h2>Playing music</h2>
+                <h2>Playing music (Not implemented)</h2>
                 <ul>
-                    <li><a href="spotify:app:api-tutorial:playing:play-track">Play a single track</a></li>
-                    <li><a href="spotify:app:api-tutorial:playing:play-list-tracks">Play a list of tracks</a></li>
-                    <li><a href="spotify:app:api-tutorial:playing:current-track">Get the currently playing track</a></li>
-                    <li><a href="spotify:app:api-tutorial:playing:click-to-play">Create a play/pause button with an HTML element</a></li>
-                    <li><a href="spotify:app:api-tutorial:playing:skip-track">Skip to the next or previous track</a></li>
+                    <li><a data-uri="spotify:tutorial:playing:play-track">Play a single track</a></li>
+                    <li><a data-uri="spotify:tutorial:playing:play-list-tracks">Play a list of tracks</a></li>
+                    <li><a data-uri="spotify:tutorial:playing:current-track">Get the currently playing track</a></li>
+                    <li><a data-uri="spotify:tutorial:playing:click-to-play">Create a play/pause button with an HTML element</a></li>
+                    <li><a data-uri="spotify:tutorial:playing:skip-track">Skip to the next or previous track</a></li>
                 </ul>
 
-                <h2>Searching</h2>
+                <h2>Searching (Partially implemented)</h2>
                 <ul>
-                    <li><a href="spotify:app:api-tutorial:search:metadata">Get metadata from an artist, album, track, or playlist</a></li>
-                    <li><a href="spotify:app:api-tutorial:search:search">Return metadata with a given search query</a></li>
+                    <li><a data-uri="spotify:tutorial:search:metadata">Get metadata from an artist, album, track, or playlist</a></li>
+                    <li><a data-uri="spotify:tutorial:search:search">Return metadata with a given search query</a></li>
                 </ul>
 
-                <h2>Interacting with user data</h2>
+                <h2>Interacting with user data (Not implemented)</h2>
                 <ul>
-                    <li><a href="spotify:app:api-tutorial:user:data">Get information about the current user</a>
-                    <li><a href="spotify:app:api-tutorial:user:toplist">Get a user's top tracks, artists, tracks and playlists</a></li>
-                    <li><a href="spotify:app:api-tutorial:user:star-track">Star and unstar a track</a></li>
+                    <li><a data-uri="spotify:tutorial:user:data">Get information about the current user</a>
+                    <li><a data-uri="spotify:tutorial:user:toplist">Get a user's top tracks, artists, tracks and playlists</a></li>
+                    <li><a data-uri="spotify:tutorial:user:star-track">Star and unstar a track</a></li>
                 </ul>
 
                 <h2>Facebook</h2>
                 <ul>
-                    <li><a href="spotify:app:api-tutorial:facebook:authenticate">Authenticate a user with Facebook</a></li>
+                    <li><a data-uri="spotify:tutorial:facebook:authenticate">Authenticate a user with Facebook</a></li>
                 </ul>
 
             </div>

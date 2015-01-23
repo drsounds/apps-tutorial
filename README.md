@@ -1,3 +1,8 @@
+| Port to Bungalow API   |
+| ------------------------------------- |
+| This fork of the apps tutorial for the now removed Spotify Apps API is a port to the open source Bungalow API that will resemble a smaller clone of the Spotify Apps API. Far from all functionality are complete. [Find the Bungalow client here](http://github.com/drsounds/bungalow)|
+
+
 | Closure of Spotify Apps Submissions   |
 | ------------------------------------- |
 | Spotify closed the submission process for new apps on the 24th of March 2014. You can still develop apps using this tutorial, but your app will not be released through the App Finder and will thus not be accessible to other users. Please read the [announcement](http://devnews.spotify.com/2014/03/24/closure-of-spotify-apps-submissions/) on our Developer News site for more information. |

@@ -2,7 +2,7 @@
     <h1>Get metadata from an artist, album, track, or playlist</h1>
     <p class="description">You can get back more metadata than ever in this version of the API. Check out the examples below. Be sure to properly create snapshots when <code>Collection</code> types are returned.</p>
     <div class="reference">
-        Reference: <a href="https://developer.spotify.com/docs/apps/api/1.0/api-models-artist.html">Artist Model</a>, <a href="https://developer.spotify.com/docs/apps/api/1.0/api-models-album.html">Album Model</a>, <a href="https://developer.spotify.com/docs/apps/api/1.0/api-models-track.html">Track Model</a>, <a href="https://developer.spotify.com/docs/apps/api/1.0/api-models-playlist.html">Playlist Model</a>, <a href="https://developer.spotify.com/docs/apps/api/1.0/api-models-promise.html">Promise Model</a>
+        <strike>Reference: <a href="https://developer.spotify.com/docs/apps/api/1.0/api-models-artist.html">Artist Model</a>, <a href="https://developer.spotify.com/docs/apps/api/1.0/api-models-album.html">Album Model</a>, <a href="https://developer.spotify.com/docs/apps/api/1.0/api-models-track.html">Track Model</a>, <a href="https://developer.spotify.com/docs/apps/api/1.0/api-models-playlist.html">Playlist Model</a>, <a href="https://developer.spotify.com/docs/apps/api/1.0/api-models-promise.html">Promise Model</a></strike>
     </div>
     <h3>The Javascript</h3>
     <div id="js"></div>
@@ -18,7 +18,7 @@
         <div id="playlist-metadata"></div>
     </div>
     <script type="script/snippet" data-container="js">
-        require(['$api/models'], function(models) {
+        //require(['$api/models'], function(models) {
 
             var artist_metadata_HTML = document.getElementById('artist-metadata');
 
@@ -143,19 +143,17 @@
                 'tracks'
             ];
 
-            models.Playlist.fromURI('spotify:user:billboard.com:playlist:6UeSakyzhiEt4NB3UAd6NQ')
-                .load(playlist_metadata_properties)
-                .done(function(p) {
+            Playlist.fromURI('spotify:user:billboard.com:playlist:6UeSakyzhiEt4NB3UAd6NQ', function(playlist) {
                     var html = '';
                     html += '<h4>playlist metadata</h4>';
                     html += '<p>Name: ' + p.name.decodeForHtml() + '</p>';
                     html += '<p>Collaborative: ' + p.collaborative + '</p>';
                     html += '<p>Description: ' + p.description.decodeForHtml() + '</p>';
                     html += '<p>Owner: ' + p.owner + '</p>';
-                    html += '<p>Published: ' + p.published + '</p>';
-                    html += '<p>Subscribed: ' + p.subscribed + '</p>';
+                  //  html += '<p>Published: ' + p.published + '</p>';
+                //    html += '<p>Subscribed: ' + p.subscribed + '</p>';
 
-                    models.Promise.join([
+                  /*  models.Promise.join([
                         p.subscribers.snapshot(),
                         p.tracks.snapshot()
                     ]).done(function (result) {
@@ -167,9 +165,10 @@
                             track_names += '<li>' + tracks[i].name + '</li>';
                         }
                         html += '<ol>' + track_names.toString() + '</ol>';
-                    });
+                    });*/
+                    html += "Subscribers property is not yet implemented in this API";
                     playlist_metadata_HTML.innerHTML = html;
                 });
-        });
+       // });
     </script>
 </div>

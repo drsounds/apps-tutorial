@@ -1,4 +1,5 @@
 <div class="section">
+    <p>Feature not yet implemented in Bungalow</p>
     <h1>Create a play/pause button with an HTML element</h1>
     <p class="description">This code snippet will let you control the Player object with a click event.</p>
 
@@ -17,9 +18,8 @@
         <button id="play-me"></button>
     </div>
     <script type="script/snippet" data-container="js">
-    require(['$api/models'], function(models) {
-
-        var player = models.player,
+    
+        var player = player,
             playMeButton = document.getElementById('play-me');
 
         function updateButton() {
@@ -48,6 +48,5 @@
         // update on change
         models.player.addEventListener('change', function() {updateButton();
         });
-    });
     </script>
 </div>
